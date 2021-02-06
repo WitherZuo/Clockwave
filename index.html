@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="build/index.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="js/nongli.js"></script>
+    <script src="js/html2canvas.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        ;(function () {
+            var src = '//cdn.jsdelivr.net/npm/eruda';
+            if (!/eruda=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
+            document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+            document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+        })();
+    </script>
+    <title>每日报时</title>
+</head>
+<body>
+    <!-- 所有主体内容层 & Canvas截图层 -->
+    <div class="main" id="needCapture">
+        <!-- 头图 - 必应每日壁纸 -->
+        <div class="headpic">
+            <div class="authorbanner">
+                <div class="project-logo"><img src="images/clock-regular.png" alt="clock-logo"></div>
+            </div>
+            <img src="images/photo.jpg" alt="bingwallpaper" title="Bing Wallpaper" />
+            <span class="imginfo">奥拉基库克山国家公园中的塞夫顿山，新西兰南岛 (© AWL Images/Danita Delimont)</span>
+        </div>
+        <div class="important-news">
+            <span class="maininfo">由于出现多起中方留学人员受伤事件，5日，教育部发布2021年第1号留学预警。提醒广大留学人员，充分做好安全风险评估，谨慎选择赴澳或返澳学习</span>
+        </div>
+        <!-- 头图层结束 -->
+        <!-- 主要信息层 -->
+        <div class="info">
+            <!-- 当日日期时间相关信息 -->
+            <div class="date">
+                <div class="timebox">
+                    <div class="time" id="time"></div>
+                    <div class="riqi" id="riqi"></div>
+                    <div class="year" id="year"></div>
+                    <div class="nongliyear">庚子牛年</div>
+                </div>
+            </div>
+            <!-- 当日日期时间相关信息结束 -->
+            <!-- 当日农历和宜忌信息 -->
+            <div class="nongli">
+                <div class="timebox">
+                    <h2 class="nongliname" id="nongliname">『 腊月廿五 』</h2>
+                    <table class="events">
+                        <tr>
+                            <td class="col allow"><span class="allowTitle">&nbsp;</span></td>
+                            <td class="col allow-content">
+                                <span id="ylist">祭祀 冠笄 嫁娶 拆卸 修造 动土 起基 上梁 盖屋 入宅 开市 开池 塞穴 入殓 除服 成服 移柩 安葬 破土 </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col disallow"><span class="disallowTitle">&nbsp;</span></td>
+                            <td class="col disallow-content">
+                                <span id="jlist">安床 栽种 治病 作灶 </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- 宜忌事项信息表格结束 -->
+                </div>
+            </div>
+            <!-- 当日农历和宜忌信息结束 -->
+        </div>
+        <!-- 主要信息层结束 -->
+        <!-- 接下来几日特殊信息 -->
+        <div class="future">
+            <span class="sepline"></span>
+            <h3> ◈ 接下来 ◈ </h3>
+            <p>
+                2月11日 - 除夕，
+                2月12日 - 春节，
+                2月14日 - 情人节
+            </p>
+        </div>
+        <!-- 接下来几日特殊信息结束 -->
+        <footer>
+            <div class="watermark"><img src="images/watermark-image-sf.png" alt="watermark-image"></div>
+            <span class="copyright-text">当日顶部图片来源：Bing（必应搜索）；农历信息、每日宜忌事项、节假日信息来源：中华万年历；今日新闻内容来源：央视新闻；时间时区为：UTC+8 / CST（中国标准时）【重要：引用请勿删除版权信息】</span>
+        </footer>
+    </div>
+    <a href="" download="Clockwave.png" id="save_href">生成 并 下载 今天的 Clockwave 图</a>
+</body>
+<script>window.onload = ClockwaveLoadAction();</script>
+</html>
