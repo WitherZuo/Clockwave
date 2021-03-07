@@ -1,0 +1,28 @@
+// 春节时期 - 特定样式
+
+// 所有颜色变量
+@import '../_color';
+
+// 设置“主体内容层”样式
+.main {
+	background: url('../images/springfestival/springfestival_bg.png') @main-background-color-sf repeat !important;
+}
+
+// 接下来几日事件
+.main .future {
+	span.sepline {
+		border: 1px solid @splitLines-color-sf !important;
+		background: @splitLines-color-sf !important;
+	}
+}
+
+// 版权层
+.main footer {
+	background: @footerCopyright-background-color-sf !important;
+	.watermark {
+		background: none !important;
+	}
+	img {
+		padding: 0 !important;
+	}
+}
