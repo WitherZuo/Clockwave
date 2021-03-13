@@ -3,7 +3,9 @@
  "version": "1.0.0",
  "description": "A perpetual calendar page with HTML and CSS, update every day.",
  "scripts": {
-  "start": "browser-sync start --server --config js/bs-config.js"
+  "install": "npm install -g browser-sync sass",
+  "start": "browser-sync start --server --config js/bs-config.js",
+  "watch": "sass css/index.scss build/index.css --watch"
  },
  "repository": {
   "type": "git",
@@ -17,6 +19,6 @@
  "homepage": "https://github.com/WitherZuo/Clockwave#readme",
  "dependencies": {
   "browser-sync": "^2.26.14",
-  "less": "^4.1.1"
+  "sass": "^1.32.8"
  }
 }

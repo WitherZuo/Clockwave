@@ -11,8 +11,12 @@
     font-family: 'Microsoft YaHei', sans-serif;
 }
 
+:root {
+    color-scheme: dark light;
+}
+
 body {
-    background: @body-background-color;
+    background: $body-background-color;
 }
 
 canvas {
@@ -23,23 +27,26 @@ canvas {
 .main {
     width: 640px;
     height: auto;
-    background: @main-background-color repeat;
-    color: @main-text-color;
+    background: $main-background-color repeat;
+    color: $main-text-color;
     position: relative;
     margin-bottom: 40px;
+
     // 设置“头图层”样式
     .headpic {
         position: relative;
         width: 640px;
         height: 360px;
+
         // 顶部项目名称栏
         .authorbanner {
             position: fixed;
             width: 640px;
             padding: 2px;
-            background-color: @main-accent-color;
-            color: @main-text-color;
+            background-color: $main-accent-color;
+            color: $main-text-color;
             text-align: center;
+
             // 项目 Logo 框架
             .project-logo {
                 width: 0;
@@ -48,10 +55,11 @@ canvas {
                 top: -8px;
                 left: -39px;
                 z-index: 2;
-                border-bottom: 60px solid @main-accent-color;
+                border-bottom: 60px solid $main-accent-color;
                 border-left: 60px solid transparent;
                 border-right: 60px solid transparent;
                 transform: rotate(-45deg);
+
                 // 项目 Logo 框架内图标
                 img {
                     position: absolute;
@@ -72,6 +80,7 @@ canvas {
         width: 100%;
         height: 100%;
     }
+
     // 设置“头图层”图片信息样式
     span.imginfo {
         position: absolute;
@@ -81,7 +90,7 @@ canvas {
         width: 100%;
         text-align: left;
         font-size: 18px;
-        background: @headerText-background-color;
+        background: $headerText-background-color;
         word-wrap: break-word;
     }
 }
@@ -91,9 +100,10 @@ canvas {
     padding: 10px;
     width: 100%;
     height: auto;
-    background-color: @main-accent-color;
-    color: @main-text-color;
+    background-color: $main-accent-color;
+    color: $main-text-color;
     text-align: center;
+
     // 新闻横幅内容
     span.maininfo {
         font-weight: 700;
@@ -109,16 +119,19 @@ canvas {
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+
     // 设置日期时间层和农历信息层样式，在同一主层平分
     .date,
     .nongli {
         width: calc(100% / 2);
         height: auto;
     }
+
     // 日期时间层
     .date {
         text-align: center;
         position: relative;
+
         // 时间盒样式
         .timebox {
             width: 100%;
@@ -127,16 +140,20 @@ canvas {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
             // 农历
             .nongliyear {
                 font-size: 16px;
+
                 &::before {
                     content: '【';
                 }
+
                 &::after {
                     content: '】';
                 }
             }
+
             // 时间盒 - 时间
             .time {
                 font-size: 75px;
@@ -144,10 +161,12 @@ canvas {
                 padding-bottom: 10px;
             }
         }
+
         // 时间盒 - 日期
         .riqi {
             font-size: 24px;
         }
+
         // 时间盒 - 年份
         .year {
             font-size: 36px;
@@ -155,11 +174,13 @@ canvas {
             margin-top: 6px;
         }
     }
+
     // 农历信息层
     .nongli {
         margin-right: 42px;
         height: 228px;
         position: relative;
+
         // 时间盒样式
         .timebox {
             width: 100%;
@@ -167,6 +188,7 @@ canvas {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+
             // 农历信息层 - 主要标题
             h2.nongliname {
                 text-align: center;
@@ -174,25 +196,28 @@ canvas {
                 padding: 10px 10px 10px 59px;
                 background: url('/images/calendar.png') no-repeat 55px 12px;
             }
+
             // 农历信息层 - 当日事件
             table.events {
                 font-size: 18px;
                 border-collapse: collapse;
                 border-spacing: 0;
+
                 tr td {
                     border-width: 1px;
                     overflow: hidden;
                     padding: 10px 5px;
                     word-break: normal;
-                    &.allow-content,
-                    &.disallow-content {
+
+                    &.yijiContent {
                         padding: 10px 0 10px 5px;
                     }
+
                     &.col {
                         border-color: inherit;
                         text-align: left;
-                        span.allowTitle,
-                        span.disallowTitle {
+
+                        span.yijiTitle {
                             display: inline-block;
                             vertical-align: middle;
                             width: 24px;
@@ -200,16 +225,19 @@ canvas {
                             border-radius: 6px;
                             font-weight: 700;
                             margin-right: 4px;
-                            border: 2px solid @border-line-color;
-                        }
-                        span.allowTitle {
-                            background-color: @allowTitle-color;
-                        }
-                        span.disallowTitle {
-                            background-color: @disallowTitle-color;
+                            border: 2px solid $border-line-color;
+
+                            &.allow {
+                                background-color: $allowTitle-color;
+                            }
+    
+                            &.disallow {
+                                background-color: $disallowTitle-color;
+                            }
                         }
                     }
                 }
+
                 th {
                     border-width: 1px;
                     font-size: 18px;
@@ -226,28 +254,32 @@ canvas {
 .main .future {
     padding: 16px 10px 40px 10px;
     text-align: center;
+
     span.sepline {
         display: block;
         width: 90%;
         height: 1px;
-        border: 1px solid @splitLines-color;
-        background: @splitLines-color;
+        border: 1px solid $splitLines-color;
+        background: $splitLines-color;
         margin: 0 auto;
     }
+
     h3 {
         font-size: 22px;
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
     p {
         font-size: 18px;
         padding: 0 28px;
         line-height: 1.8;
+
         span.current {
             padding: 4px 6px;
             border-radius: 6px;
-            color: @main-text-color;
-            background-color: @main-accent-color;
+            color: $main-text-color;
+            background-color: $main-accent-color;
             font-weight: 700;
         }
     }
@@ -255,23 +287,26 @@ canvas {
 
 // 版权层
 .main footer {
-    background: @footerCopyright-background-color;
-    color: @main-text-color;
+    background: $footerCopyright-background-color;
+    color: $main-text-color;
     text-align: center;
     font-size: 12px;
     font-weight: 700;
     height: 48px;
+
     .watermark {
         width: 48px;
         height: 48px;
         float: left;
-        background: @main-accent-color;
+        background: $main-accent-color;
+
         img {
             width: 100%;
             height: 100%;
             padding: 3px;
         }
     }
+
     span.copyright-text {
         display: inline-block;
         width: calc(640px - 48px);
@@ -286,14 +321,15 @@ a#save_href {
     width: 100%;
     bottom: 0;
     padding: 4px;
-    border: 4px solid @button-border-color;
-    background: @main-accent-color;
-    color: @main-text-color;
+    border: 4px solid $button-border-color;
+    background: $main-accent-color;
+    color: $main-text-color;
     text-align: center;
     font-weight: 700;
     font-size: 18px;
     text-decoration: none;
+
     &:hover {
-        background: shade(@main-accent-color, 25%);
+        background: darken($main-accent-color, 8);
     }
 }
