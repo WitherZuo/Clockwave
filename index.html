@@ -9,12 +9,12 @@
     <script src="js/html2canvas.min.js"></script>
     <script src="js/index.js"></script>
     <script>
-        ;(function () {
-            var src = '//cdn.jsdelivr.net/npm/eruda';
-            if (!/eruda=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
-            document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
-            document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
-        })();
+        // ;(function () {
+        //     var src = '//cdn.jsdelivr.net/npm/eruda';
+        //     if (!/eruda=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
+        //     document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+        //     document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+        // })();
     </script>
     <title>每日报时</title>
 </head>
@@ -27,10 +27,10 @@
                 <div class="project-logo"><img src="images/clock-regular.png" alt="clock-logo"></div>
             </div>
             <img src="images/photo.jpg" alt="bingwallpaper" title="Bing Wallpaper" />
-            <span class="imginfo">文斯利代尔 | 欧洲，英格兰，约克郡谷地国家公园 (© Guy Edwardes / Minden Pictures)</span>
+            <span class="imginfo">山脉中的朱砂湖，加拿大落基山脉 (© Glowing Earth Photography/Getty Images)</span>
         </div>
         <div class="important-news">
-            <span class="maininfo">特斯拉再回应安阳女车主维权：争取尽快启动下一次调解，并推动第三方检测</span>
+            <span class="maininfo">近日，河南多地遭遇极端强降雨。21日1时30分，河南省郑州市二七区郭家咀水库溃坝，国家防总决定21日3时将防汛Ⅲ级应急响应提升至Ⅱ级</span>
         </div>
         <!-- 头图层结束 -->
         <!-- 主要信息层 -->
@@ -48,15 +48,15 @@
             <!-- 当日农历和宜忌信息 -->
             <div class="nongli">
                 <div class="timebox">
-                    <h2 class="nongliname" id="nongliname">『 三月十五 』</h2>
+                    <h2 class="nongliname" id="nongliname">『 六月十二 』</h2>
                     <table class="events">
                         <tr>
                             <td class="col allow"><span class="yijiTitle allow">&nbsp;</span></td>
-                            <td class="col yijiContent allow"><span id="ylist">出行 修饰垣墙 造畜稠 教牛马 馀事勿取 </span></td>
+			    <td class="col yijiContent allow"><span id="ylist">补垣 塞穴 结网 入殓 除服 成服 移柩 安葬 启钻 馀事勿取 </span></td>
                         </tr>
                         <tr>
                             <td class="col disallow"><span class="yijiTitle disallow">&nbsp;</span></td>
-                            <td class="col yijiContent disallow"><span id="jlist">诸事不宜 </span></td>
+			    <td class="col yijiContent disallow"><span id="jlist">诸事不宜 </span></td>
                         </tr>
                     </table>
                     <!-- 宜忌事项信息表格结束 -->
@@ -70,15 +70,19 @@
             <span class="sepline"></span>
             <h3> ◈ 接下来 ◈ </h3>
             <p>
-                5月1日 - 劳动节，
-                5月4日 - 五四青年节，
-                5月5日 - 立夏
+                7月23日 - 大暑，
+                8月1日 - 建军节，
+                8月8日 - 立秋，
+		        8月14日 - 七夕，
+				8月15日 - 日本投降日，
+				8月22日 - 中元节，
+				8月23日 - 处暑
             </p>
         </div>
         <!-- 接下来几日特殊信息结束 -->
         <footer>
             <div class="watermark"><img src="images/watermark-image.png" alt="watermark-image"></div>
-            <span class="copyright-text">当日顶部图片来源：Bing（必应搜索）；农历信息、每日宜忌事项、节假日信息来源：中华万年历；今日新闻内容来源：IT之家；时间时区为：UTC+8 / CST（中国标准时）【重要：引用请勿删除版权信息】</span>
+            <span class="copyright-text">当日顶部图片来源：Bing（必应搜索）；农历信息、每日宜忌事项、节假日信息来源：中华万年历；今日新闻内容来源：央视新闻；时间时区为：UTC+8 / CST（中国标准时）【重要：引用请勿删除版权信息】</span>
         </footer>
     </div>
     <a href="" download="Clockwave.png" id="save_href">生成 并 下载 今天的 Clockwave 图</a>

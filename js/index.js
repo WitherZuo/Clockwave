@@ -38,7 +38,7 @@ function ClockwaveLoadAction() {
 
         console.log(tempSrc);
 
-        document.body.removeChild(canvas);
         document.getElementById('save_href').href = tempSrc;
+        document.body.removeChild(canvas);
     });
 }
